@@ -2,32 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../assets/font/Gilroy/Gilroy-Regular.ttf") format("truetype");
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @font-face {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../assets/font/Gilroy/Gilroy-Bold.ttf") format("truetype");
+  }
+  body {
+    background-color: #f8ffff;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  * {
+    font-family: "Gilroy", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1e959b;
+    line-height: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li,
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #1e959b;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+    background-color: #d4f8fa;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #1e959b;
   }
 }
